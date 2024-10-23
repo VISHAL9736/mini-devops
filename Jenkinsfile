@@ -3,7 +3,8 @@ pipeline {
 
     environment {
         // Ensure npm and other binaries are found in the PATH
-        PATH = "/usr/local/bin:${env.PATH}"  // Adjust as necessary
+        PATH = "/usr/local/bin:${env.PATH}",
+        PATH = "${env.WORKSPACE}/node_modules/.bin:${env.PATH}"
     }
 
     stages {
@@ -63,5 +64,11 @@ pipeline {
                 }
             }
         }
+        stage('Validate Dependencies') {
+    steps {
+        sh 'npm list react-scripts || echo "react-scripts not found" && exit 1'
+    }
+}
+
     }
 }
