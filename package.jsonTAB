@@ -1,0 +1,23 @@
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "123"
+  },
+ "dependencies": {
+   "express": "^4.16.1"
+}
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VISHAL9736/mini-devops.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VISHAL9736/mini-devops/issues"
+  },
+  "homepage": "https://github.com/VISHAL9736/mini-devops#readme"
+}
