@@ -18,7 +18,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main', 
-                    credentialsId: '9ec622aa-547f-4fcd-979c-eac439d30369', 
+                    credentialsId: '6fc544f5-c122-4514-b21b-55d7f4fcc921', 
                     url: 'https://github.com/VISHAL9736/mini-devops.git'  // Update your GitHub URL
             }
         }
