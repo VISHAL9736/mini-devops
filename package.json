@@ -2,6 +2,7 @@
   "name": "docker_web_app",
   "version": "1.0.0",
   "description": "Node.js on Docker",
+<<<<<<< HEAD
   "main": "index.js",
   "scripts": {
     "test": "123"
@@ -16,4 +17,18 @@
     "url": "https://github.com/VISHAL9736/mini-devops/issues"
   },
   "homepage": "https://github.com/VISHAL9736/mini-devops#readme"
+=======
+  "author": "cmuth001@odu.edu",
+  "main": "server.js",
+  "scripts": {
+    "build": "react-scripts build",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1"
+  },
+  "dependencies": {
+  "react-scripts": "^5.0.0" 
+}
+>>>>>>> origin/main
 }
