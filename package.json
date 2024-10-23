@@ -5,6 +5,7 @@
   "author": "cmuth001@odu.edu",
   "main": "server.js",
   "scripts": {
+    "build": "react-scripts build",
     "start": "node server.js"
   },
   "dependencies": {
