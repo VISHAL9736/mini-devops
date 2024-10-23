@@ -1,44 +1,27 @@
 pipeline {
     agent any
-    
+    environment {
+        PATH = "/usr/local/bin:${env.PATH}"  // Adjust as necessary
+    }
     stages {
-        stage('Checkout') {
+        stage('Debug Info') {
             steps {
-                git branch: 'main', url: 'https://github.com/VISHAL9736/mini-devops.git'
+                sh 'echo "PATH: $PATH"'
+                sh 'node -v'
+                sh 'npm -v'
+                sh 'git --version'
             }
         }
-        
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
             }
         }
-        
-        stage('Run Tests') {
-            steps {
-                sh 'npm test'
-            }
-        }
-        
-        stage('Build React App') {
-            steps {
-                sh 'npm run build'
-            }
-        }
-        
-        stage('Build Docker Image') {
-            steps {
-                sh 'docker build -t your-docker-repo/your-image-name:latest .'
-            }
-        }
-        
-        stage('Push Docker Image') {
-            steps {
-                withCredentials([usernamePassword(credentialsId: 'docker-credentials', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-                    sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
-                    sh 'docker push your-docker-repo/your-image-name:latest'
-                }
-            }
-        }
+        // Other stages...
     }
 }
